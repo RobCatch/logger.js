@@ -98,8 +98,8 @@ function logLevel(level){
         if(logger.stream) {
             logger.stream.write(info + args[0] + '\n');
         } else {
-            process.stdout.write(info);
-            console[isConsole ? '_log' : 'log'].apply(null, args);
+            process[level == 'error' || level == 'warn' ? 'stderr' : 'stdout'].write(info);
+            console[(isConsole ? '_' : '') + (level == 'error' || level == 'warn' ? 'error' : 'log')].apply(null, args);
         }
     }
 }
