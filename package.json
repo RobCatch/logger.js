@@ -1,0 +1,16 @@
+{
+  "name": "logger.js",
+  "version": "0.1.0",
+  "description": "Logging module for Node.js",
+  "main": "logger.js",
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/RobCatch/logger.js"
+  },
+  "devDependencies": {
+    "colors": "*",
+	"moment": "*"
+  },
+  "author": "robcatchpole@gmail.com",
+  "license": "ISC"
+}
