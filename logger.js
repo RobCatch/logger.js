@@ -19,6 +19,7 @@ var logger = {
     format: null,
     dateFormat: null,
     prettyObjects: true,
+    showMaster: false,
     setConsole: function(override){
         if(override && !isConsole) {
             for (var level in levels) {
@@ -46,7 +47,7 @@ function logLevel(level){
         var path, file, line,
             args = Array.prototype.slice.call(arguments),
             date = logger.dateFormat ? moment().format(logger.dateFormat) : new Date().toUTCString(),
-            pid = process.isMaster ? 'master' : process.pid,
+            pid = logger.showMaster && process.isMaster ? 'master' : process.pid,
             info = '';
 
         function getCallerDetails(index){
